@@ -1,3 +1,5 @@
 numbers
 training
 labels
+*.outputs
+*.weights
