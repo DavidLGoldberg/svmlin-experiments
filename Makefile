@@ -9,7 +9,7 @@ training:
 	../svmlin ./training ./labels
 
 testing:
-	../svmlin ./training.outputs ./test_examples
+	../svmlin -f ./training.outputs ./test_examples
 
 clean:
 	rm -rf ./*.outputs ./*.weights ./numbers ./training ./labels
