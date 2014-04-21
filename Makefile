@@ -2,7 +2,7 @@ algorithm = 1
 
 .PHONY: training testing clean
 
-all: clean training testing
+all: clean training testing evaluation
 
 training:
 	./echo_n_5_digit_numbers.py 1000000 > numbers
@@ -13,8 +13,8 @@ training:
 testing:
 	../svmlin -A $(algorithm) -f ./training.weights ./test_examples
 
+evaluation:
+	../svmlin -f ./training.weights ./test_examples ./test_examples_labels
+
 clean:
 	rm -rf ./*.outputs ./*.weights ./numbers ./training ./labels
-
-#evaluation:
-	#../svmlin -f ./training.weights  
